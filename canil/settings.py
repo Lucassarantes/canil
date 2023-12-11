@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+# from animals.models import Animal
+# from owners.models import Owner
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'animals',
+    'owners',
+    'employees',
+    'canil.housing.apps.HousingConfig',
+    'canil.medicine.apps.MedicineConfig'
 ]
 
 MIDDLEWARE = [
