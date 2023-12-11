@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'owners',
     'employees',
     'canil.housing.apps.HousingConfig',
-    'canil.medicine.apps.MedicineConfig'
+    'canil.medicine.apps.MedicineConfig',
+    'canil.modules.apps.ModulesConfig'
 ]
 
 MIDDLEWARE = [
