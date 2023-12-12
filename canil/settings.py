@@ -39,12 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'animals',
-    'owners',
-    'employees',
-    'canil.housing.apps.HousingConfig',
-    'canil.medicine.apps.MedicineConfig',
-    'canil.modules.apps.ModulesConfig'
+    # 'canil.animals.apps.AnimalsConfig',
+    # 'canil.owners.apps.OwnersConfig',
+    # 'canil.employees.apps.EmployeesConfig',
+    # 'canil.housing.apps.HousingConfig',
+    # 'canil.medicine.apps.MedicineConfig',
+    'canil.modules.apps.ModulesConfig',
+    'canil.registers.apps.RegistersConfig'
 ]
 
 MIDDLEWARE = [
