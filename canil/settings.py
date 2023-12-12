@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'canil.animals.apps.AnimalsConfig',
+    # 'canil.animals.apps.AnimalsConfig',licit app_labe
     # 'canil.owners.apps.OwnersConfig',
     # 'canil.employees.apps.EmployeesConfig',
     # 'canil.housing.apps.HousingConfig',

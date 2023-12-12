@@ -1,6 +1,5 @@
 from django.db import models
-from canil.housing.models import Housing
-from canil.animals.models import Animal
+from canil.registers.models import Animal, Housing
 
 class HousingManagement(models.Model):
     housing = models.ForeignKey(Housing, on_delete = models.CASCADE)
