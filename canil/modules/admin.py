@@ -9,7 +9,7 @@ class AnimalsAdoptionAdmin(admin.ModelAdmin):
     list_display = (['display_animals'])
     
     def display_animals(self, obj):
-        return '\n '.join([f"{{{animal.id} | {animal.name} | {animal.animal_type} | {animal.greed} | {animal.status}}} \n" for animal in obj.animals.all()])
+        return "\n".join([f"{animal.id} | {animal.name} | {animal.animal_type} | {animal.greed} | {animal.status}" for animal in obj.animals.all()])
     
     display_animals.short_description = 'id | name | type | greed | status'
     
