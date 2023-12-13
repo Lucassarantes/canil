@@ -53,12 +53,13 @@ class Owner(models.Model):
         return self.name
     
 class Animal(models.Model):
-    animalType = models.CharField(max_length=200)
+    animal_type = models.CharField(max_length=200)
     greed = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     age = models.IntegerField()
     size = models.CharField(max_length = 200)
     gender = models.CharField(max_length=200)
+    # default_owner = Owner.objects.get_or_create(name='no_owner')[0]
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
     status = models.CharField(max_length=200)
 
