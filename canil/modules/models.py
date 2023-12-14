@@ -48,9 +48,9 @@ class AnimalHealth(models.Model):
         except ValidationError as e:
             print(e.message)
     
-class AnimalsAdoption(models.Model):
-    animals = models.ManyToManyField(Animal)
+# class AnimalsAdoption(models.Model):
+#     animals = models.ManyToManyField(Animal)
     
-    def __str__(self):
-        return f"Animals Adoption #{self.id}"
+#     def __str__(self):
+#         return f"Animals Adoption #{self.id}"
     

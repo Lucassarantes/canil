@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib import admin
+from django.contrib.auth.models import User, Group
 
 # Animals choices
 ANIMAL_TYPE_CHOICES = (
@@ -37,7 +38,7 @@ class Employee(models.Model):
     role = models.ForeignKey(Role, on_delete=models.CASCADE)
     phone = models.CharField(max_length=200)
     email = models.EmailField()
-    cpf = models.CharField(max_length=12)
+    cpf = models.CharField(max_length=14)
     zip = models.IntegerField()
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=200, default = 'São Paulo')
@@ -45,6 +46,20 @@ class Employee(models.Model):
     
     def __str__(self):
         return self.name
+    
+    def gen_pass(self):
+        name = self.name.split()
+        return name[0] +'_'+ self.cpf
+    
+    def save(self):
+        first_name = self.name.split(' ')[0]
+        user = User.objects.create_user(first_name, self.email, self.gen_pass())
+        user.is_staff = True
+        user.save()
+        group = Group.objects.get(name = 'Recepcionist')
+        user.groups.add(group)
+        
+        super(Employee, self).save()
 
 class Housing(models.Model):
     registry = models.CharField(max_length = 200) 
