@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth.models import User, Group
+import requests
 
 # Animals choices
 ANIMAL_TYPE_CHOICES = (
@@ -39,10 +40,22 @@ class Employee(models.Model):
     phone = models.CharField(max_length=200)
     email = models.EmailField()
     cpf = models.CharField(max_length=14)
-    zip = models.IntegerField()
+    zip = models.CharField(max_length=8)
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=200, default = 'São Paulo')
-    state = models.CharField(max_length=2, default = 'SP')
+    state = models.CharField(max_length=2, default = 'SP')  
+
+    def fill_address_details(self):
+        api_url = f'https://brasilapi.com.br/api/cep/{self.zip}'
+        response = requests.get(api_url)
+
+        if response.status_code == 200:
+            data = response.json()
+
+            self.address = data.get('street', '')
+            self.city = data.get('city', '')
+            self.state = data.get('state', '')
+
     
     def __str__(self):
         return self.name
@@ -52,11 +65,16 @@ class Employee(models.Model):
         return name[0] +'_'+ self.cpf
     
     def save(self):
+        self.fill_address_details()
         first_name = self.name.split(' ')[0]
-        user = User.objects.create_user(first_name, self.email, self.gen_pass())
+        user = User.objects.get(username = first_name)
+        print(user)
+        if user is not None:
+            user = User.objects.create_user(first_name, self.email, self.gen_pass())
         user.is_staff = True
         user.save()
-        group = Group.objects.get(name = 'Recepcionist')
+        role_name = str(self.role).split('- ')[1]
+        group = Group.objects.get(name = role_name)
         user.groups.add(group)
         
         super(Employee, self).save()
@@ -81,14 +99,32 @@ class Owner(models.Model):
     name = models.CharField(max_length=200)
     phone = models.CharField(max_length=200)
     email = models.EmailField()
-    cpf = models.CharField(max_length=12)
-    zip = models.IntegerField()
+    cpf = models.CharField(max_length=14)
+    zip = models.CharField(max_length=8, default=00000000)
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=200, default = 'São Paulo')
     state = models.CharField(max_length=2, default = 'SP')
+    
+    def fill_address_details(self):
+        print(self.zip)
+        api_url = f'https://brasilapi.com.br/api/cep/v2/{self.zip}'
+        response = requests.get(api_url)
+        
+        print(response)
+
+        if response.status_code == 200:
+            data = response.json()
+
+            self.address = data.get('street', '')
+            self.city = data.get('city', '')
+            self.state = data.get('state', '')
 
     def __str__(self):
         return self.name
+    
+    def save(self):
+        self.fill_address_details()
+        super(Owner, self).save()
 
 
 class Animal(models.Model):
