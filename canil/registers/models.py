@@ -46,9 +46,10 @@ class Employee(models.Model):
     state = models.CharField(max_length=2, default = 'SP')  
 
     def fill_address_details(self):
-        api_url = f'https://brasilapi.com.br/api/cep/{self.zip}'
+        print(self.zip)
+        api_url = f'https://brasilapi.com.br/api/cep/v2/02271140'
         response = requests.get(api_url)
-
+        print(response)
         if response.status_code == 200:
             data = response.json()
 
@@ -60,21 +61,16 @@ class Employee(models.Model):
     def __str__(self):
         return self.name
     
-    def gen_pass(self):
-        name = self.name.split()
-        return name[0] +'_'+ self.cpf
-    
     def save(self):
         self.fill_address_details()
         first_name = self.name.split(' ')[0]
         try:
-            usernamegen = first_name + self.cpf.replace("-", "_")
             user = User.objects.filter(username=usernamegen).first()
 
             if user is not None:
                 print("User already exists 1")
             else:
-                user = User.objects.create_user(usernamegen, self.email, self.gen_pass())
+                user = User.objects.create_user(self.cpf.replace("-", "_"), self.email, self.cpf)
                 user.is_staff = True
                 user.save()
                 role_name = str(self.role).split('- ')[1]
@@ -107,7 +103,7 @@ class Owner(models.Model):
     phone = models.CharField(max_length=200)
     email = models.EmailField()
     cpf = models.CharField(max_length=14)
-    zip = models.CharField(max_length=8, default=00000000)
+    zip = models.CharField(max_length=8, default='00000000')
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=200, default = 'São Paulo')
     state = models.CharField(max_length=2, default = 'SP')
@@ -141,7 +137,6 @@ class Animal(models.Model):
     age = models.IntegerField()
     size = models.CharField(max_length = 1, choices = ANIMAL_SIZE_CHOICES, default = 'S')
     gender = models.CharField(max_length = 1, choices = ANIMAL_GENDER_CHOICES, default = 'M')
-    # default_owner = Owner.objects.get_or_create(name='no_owner')[0]
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
     status = models.CharField(max_length = 1, choices = ANIMAL_STATUS_CHOICES, default = 'F')
 

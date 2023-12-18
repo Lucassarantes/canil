@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-# from animals.models import Animal
-# from owners.models import Owner
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,11 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'canil.animals.apps.AnimalsConfig',licit app_labe
-    # 'canil.owners.apps.OwnersConfig',
-    # 'canil.employees.apps.EmployeesConfig',
-    # 'canil.housing.apps.HousingConfig',
-    # 'canil.medicine.apps.MedicineConfig',
     'canil.modules.apps.ModulesConfig',
     'canil.registers.apps.RegistersConfig'
 ]
@@ -63,7 +57,7 @@ ROOT_URLCONF = 'canil.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "canil/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,8 +119,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'canil/static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = "/canil"
