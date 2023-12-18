@@ -67,16 +67,23 @@ class Employee(models.Model):
     def save(self):
         self.fill_address_details()
         first_name = self.name.split(' ')[0]
-        user = User.objects.get(username = first_name)
-        print(user)
-        if user is not None:
-            user = User.objects.create_user(first_name, self.email, self.gen_pass())
-        user.is_staff = True
-        user.save()
-        role_name = str(self.role).split('- ')[1]
-        group = Group.objects.get(name = role_name)
-        user.groups.add(group)
-        
+        try:
+            usernamegen = first_name + self.cpf.replace("-", "_")
+            user = User.objects.filter(username=usernamegen).first()
+
+            if user is not None:
+                print("User already exists 1")
+            else:
+                user = User.objects.create_user(usernamegen, self.email, self.gen_pass())
+                user.is_staff = True
+                user.save()
+                role_name = str(self.role).split('- ')[1]
+                group = Group.objects.get(name=role_name)
+                user.groups.add(group)
+        except Exception as e:
+            print(f"Error: {e}")
+            print("User creation failed")
+                
         super(Employee, self).save()
 
 class Housing(models.Model):
