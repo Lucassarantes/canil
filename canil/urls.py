@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from canil.modules.views import home
+from canil.registers.admin import EmployeeAdmin
 
 urlpatterns = [
     path('admin/', admin.site.urls),

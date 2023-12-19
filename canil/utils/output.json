@@ -1,0 +1,402 @@
+[
+  {
+    "animal_type": "Dog",
+    "breed": "Beagle",
+    "name": "Max",
+    "age": "3 years",
+    "size": "Medium",
+    "gender": "Male",
+    "owner": "Sarah Connor",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Cat",
+    "breed": "Persian",
+    "name": "Bella",
+    "age": "5 years",
+    "size": "Small",
+    "gender": "Female",
+    "owner": "John Smith",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Bird",
+    "breed": "Parrot",
+    "name": "Coco",
+    "age": "2 years",
+    "size": "Small",
+    "gender": "Male",
+    "owner": "Alice Johnson",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "Labrador",
+    "name": "Buddy",
+    "age": "4 years",
+    "size": "Large",
+    "gender": "Male",
+    "owner": "Mike Brown",
+    "status": "In Treatment\n"
+  },
+  {
+    "animal_type": "Cat",
+    "breed": "Siamese",
+    "name": "Daisy",
+    "age": "6 years",
+    "size": "Medium",
+    "gender": "Female",
+    "owner": "Emily Clark",
+    "status": "Lost\n"
+  },
+  {
+    "animal_type": "Rabbit",
+    "breed": "Lop",
+    "name": "Thumper",
+    "age": "1 year",
+    "size": "Small",
+    "gender": "Male",
+    "owner": "David Wilson",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "German Shepherd",
+    "name": "Luna",
+    "age": "2 years",
+    "size": "Large",
+    "gender": "Female",
+    "owner": "Laura Martin",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Bird",
+    "breed": "Canary",
+    "name": "Sunny",
+    "age": "3 years",
+    "size": "Small",
+    "gender": "Female",
+    "owner": "Peter Taylor",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Cat",
+    "breed": "Maine Coon",
+    "name": "Oliver",
+    "age": "7 years",
+    "size": "Large",
+    "gender": "Male",
+    "owner": "Sophie Davis",
+    "status": "In Treatment\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "Bulldog",
+    "name": "Zoe",
+    "age": "5 years",
+    "size": "Medium",
+    "gender": "Female",
+    "owner": "Ryan Lopez",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "Poodle",
+    "name": "Charlie",
+    "age": "2 years",
+    "size": "Small",
+    "gender": "Male",
+    "owner": "Linda Williams",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Cat",
+    "breed": "Ragdoll",
+    "name": "Lily",
+    "age": "4 years",
+    "size": "Medium",
+    "gender": "Female",
+    "owner": "Jack Turner",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Bird",
+    "breed": "Finch",
+    "name": "Peep",
+    "age": "1 year",
+    "size": "Small",
+    "gender": "Male",
+    "owner": "Diane Carter",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "Golden Retriever",
+    "name": "Bailey",
+    "age": "3 years",
+    "size": "Large",
+    "gender": "Female",
+    "owner": "Steve Johnson",
+    "status": "Lost\n"
+  },
+  {
+    "animal_type": "Cat",
+    "breed": "Bengal",
+    "name": "Simba",
+    "age": "5 years",
+    "size": "Medium",
+    "gender": "Male",
+    "owner": "Rachel King",
+    "status": "In Treatment\n"
+  },
+  {
+    "animal_type": "Rabbit",
+    "breed": "Dwarf",
+    "name": "Fluffy",
+    "age": "2 years",
+    "size": "Small",
+    "gender": "Female",
+    "owner": "Kevin Miller",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "Boxer",
+    "name": "Rocky",
+    "age": "4 years",
+    "size": "Large",
+    "gender": "Male",
+    "owner": "Emma Lewis",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Bird",
+    "breed": "Cockatiel",
+    "name": "Whistler",
+    "age": "3 years",
+    "size": "Small",
+    "gender": "Female",
+    "owner": "George White",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Cat",
+    "breed": "British Shorthair",
+    "name": "Chester",
+    "age": "6 years",
+    "size": "Large",
+    "gender": "Male",
+    "owner": "Olivia Harris",
+    "status": "In Treatment\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "Chihuahua",
+    "name": "Bella",
+    "age": "1 year",
+    "size": "Small",
+    "gender": "Female",
+    "owner": "Noah Anderson",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Cat",
+    "breed": "Sphynx",
+    "name": "Gizmo",
+    "age": "3 years",
+    "size": "Medium",
+    "gender": "Male",
+    "owner": "Mia Martinez",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "Siberian Husky",
+    "name": "Shadow",
+    "age": "2 years",
+    "size": "Large",
+    "gender": "Male",
+    "owner": "Sophia Hernandez",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Bird",
+    "breed": "Macaw",
+    "name": "Rio",
+    "age": "4 years",
+    "size": "Large",
+    "gender": "Female",
+    "owner": "Aiden Clark",
+    "status": "Lost\n"
+  },
+  {
+    "animal_type": "Rabbit",
+    "breed": "Angora",
+    "name": "Snowball",
+    "age": "1 year",
+    "size": "Medium",
+    "gender": "Male",
+    "owner": "Isabella Lewis",
+    "status": "In Treatment\n"
+  },
+  {
+    "animal_type": "Cat",
+    "breed": "Norwegian Forest",
+    "name": "Freya",
+    "age": "5 years",
+    "size": "Large",
+    "gender": "Female",
+    "owner": "Elijah Young",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "Dachshund",
+    "name": "Oscar",
+    "age": "2 years",
+    "size": "Small",
+    "gender": "Male",
+    "owner": "Amelia Martinez",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Bird",
+    "breed": "Budgerigar",
+    "name": "Buddy",
+    "age": "3 years",
+    "size": "Small",
+    "gender": "Female",
+    "owner": "Lucas Garcia",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "Rottweiler",
+    "name": "Zeus",
+    "age": "4 years",
+    "size": "Large",
+    "gender": "Male",
+    "owner": "Charlotte Wilson",
+    "status": "In Treatment\n"
+  },
+  {
+    "animal_type": "Cat",
+    "breed": "Abyssinian",
+    "name": "Cleo",
+    "age": "1 year",
+    "size": "Medium",
+    "gender": "Female",
+    "owner": "Henry Rodriguez",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Rabbit",
+    "breed": "Flemish Giant",
+    "name": "Goliath",
+    "age": "2 years",
+    "size": "Large",
+    "gender": "Male",
+    "owner": "Ava Smith",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "French Bulldog",
+    "name": "Stella",
+    "age": "3 years",
+    "size": "Medium",
+    "gender": "Female",
+    "owner": "Chloe Thompson",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Cat",
+    "breed": "Himalayan",
+    "name": "Shadow",
+    "age": "2 years",
+    "size": "Small",
+    "gender": "Male",
+    "owner": "Michael Robinson",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Bird",
+    "breed": "African Grey Parrot",
+    "name": "Einstein",
+    "age": "4 years",
+    "size": "Medium",
+    "gender": "Male",
+    "owner": "Sophia Martinez",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "Cocker Spaniel",
+    "name": "Lady",
+    "age": "5 years",
+    "size": "Medium",
+    "gender": "Female",
+    "owner": "Daniel Hernandez",
+    "status": "In Treatment\n"
+  },
+  {
+    "animal_type": "Cat",
+    "breed": "Russian Blue",
+    "name": "Misty",
+    "age": "6 years",
+    "size": "Medium",
+    "gender": "Female",
+    "owner": "Olivia Brown",
+    "status": "Lost\n"
+  },
+  {
+    "animal_type": "Rabbit",
+    "breed": "Holland Lop",
+    "name": "Thumper",
+    "age": "1 year",
+    "size": "Small",
+    "gender": "Male",
+    "owner": "Ethan Anderson",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "Doberman",
+    "name": "Titan",
+    "age": "3 years",
+    "size": "Large",
+    "gender": "Male",
+    "owner": "Ava Garcia",
+    "status": "Adopted\n"
+  },
+  {
+    "animal_type": "Bird",
+    "breed": "Lovebird",
+    "name": "Rosie",
+    "age": "2 years",
+    "size": "Small",
+    "gender": "Female",
+    "owner": "Mason Davis",
+    "status": "Available\n"
+  },
+  {
+    "animal_type": "Cat",
+    "breed": "Siamese",
+    "name": "Suki",
+    "age": "7 years",
+    "size": "Medium",
+    "gender": "Female",
+    "owner": "Isabella Martinez",
+    "status": "In Treatment\n"
+  },
+  {
+    "animal_type": "Dog",
+    "breed": "Border Collie",
+    "name": "Max",
+    "age": "4 years",
+    "size": "Medium",
+    "gender": "Male",
+    "owner": "Emma Wilson",
+    "status": "Adopted\n"
+  }
+]
