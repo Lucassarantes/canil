@@ -18,14 +18,14 @@ def process_log_entry(log_entry):
 
         animal = {
             #'timestamp': timestamp.strftime("%Y-%m-%d %H:%M:%S"),
-            'animal_type': animal_info.get('Animal_type'),
+            'animal_type': animal_info.get('Animal_type')[0],
             'breed': animal_info.get('Breed'),
             'name': animal_info.get('Name'),
-            'age': animal_info.get('Animal_age'),
-            'size': animal_info.get('Size_of_animal'),
-            'gender': animal_info.get('Sex_of_animal'),
+            'age': int(animal_info.get('Animal_age').replace(" years", "").replace(" year", "")),
+            'size': animal_info.get('Size_of_animal')[0],
+            'gender': animal_info.get('Sex_of_animal')[0],
             'owner': animal_info.get('Human_Owner'),
-            'status': animal_info.get('Animal_condition')
+            'status': animal_info.get('Animal_condition')[0]
         }
         print(animal)
 
