@@ -13,29 +13,17 @@
             <tr>
                 <th>Name</th>
                 <th>Type</th>
-                <th>Greed</th>
+                <th>Breed</th>
             </tr>
         <thead>
         <tbody>
-        {% for animal in animals %}
-            <tr class="line">
-                <td>{{ animal.name }}</td>
-                <td>
-                    {% if animal.animal_type == 'A' %}
-                        Ape
-                    {% elif animal.animal_type == 'B' %}
-                        Bird
-                    {% elif animal.animal_type == 'C' %}
-                        Cat
-                    {% elif animal.animal_type == 'D' %}
-                        Dog
-                    {% else %}
-                        Unrecognized
-                    {% endif %}
-                </td>
-                <td>{{ animal.greed }}</td>
-            </tr>
-        {% endfor %}
+            {% for animal, animal_type_display in animal_data %}
+                <tr class="line">
+                    <td>{{ animal.name }}</td>
+                    <td>{{ animal_type_display }}</td>
+                    <td>{{ animal.greed }}</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 </body>

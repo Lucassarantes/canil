@@ -1,0 +1,38 @@
+[
+    {
+        "age": 3,
+        "animal_type": "D",
+        "breed": "Beagle",
+        "gender": "M",
+        "id": 1,
+        "name": "Max",
+        "owner": "Sarah Connor",
+        "registered_at": "2021-06-15 08:45:12",
+        "size": "M",
+        "status": "Adopted"
+    },
+    {
+        "age": 5,
+        "animal_type": "C",
+        "breed": "Persian",
+        "gender": "F",
+        "id": 1,
+        "name": "Bella",
+        "owner": "John Smith",
+        "registered_at": "2020-10-20 14:30:05",
+        "size": "S",
+        "status": "Available"
+    },
+    {
+        "age": 2,
+        "animal_type": "B",
+        "breed": "Parrot",
+        "gender": "M",
+        "id": 1,
+        "name": "Coco",
+        "owner": "Alice Johnson",
+        "registered_at": "2022-01-05 09:22:47",
+        "size": "S",
+        "status": "Adopted"
+    }
+]

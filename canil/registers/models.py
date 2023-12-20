@@ -46,8 +46,7 @@ class Employee(models.Model):
     state = models.CharField(max_length=2, default = 'SP')  
 
     def fill_address_details(self):
-        print(self.zip)
-        api_url = f'https://brasilapi.com.br/api/cep/v2/02271140'
+        api_url = f'https://brasilapi.com.br/api/cep/v2/{self.zip}'
         response = requests.get(api_url)
         print(response)
         if response.status_code == 200:
@@ -65,7 +64,7 @@ class Employee(models.Model):
         self.fill_address_details()
         first_name = self.name.split(' ')[0]
         try:
-            user = User.objects.filter(username=usernamegen).first()
+            user = User.objects.filter(username=self.cpf.replace("-", "_")).first()
 
             if user is not None:
                 print("User already exists 1")
@@ -108,6 +107,10 @@ class Owner(models.Model):
     city = models.CharField(max_length=200, default = 'São Paulo')
     state = models.CharField(max_length=2, default = 'SP')
     
+    def __str__(self):
+        # Format the zip code with a mask (e.g., '12345-6789')
+        return f'{self.zip_code[:5]}-{self.zip_code[3:]}'
+    
     def fill_address_details(self):
         print(self.zip)
         api_url = f'https://brasilapi.com.br/api/cep/v2/{self.zip}'
@@ -131,14 +134,27 @@ class Owner(models.Model):
 
 
 class Animal(models.Model):
-    animal_type = models.CharField(max_length = 1, choices = ANIMAL_TYPE_CHOICES, default = 'D')
-    greed = models.CharField(max_length=200)
+    animal_type = models.CharField(max_length=1, choices=ANIMAL_TYPE_CHOICES, default='D')
+    breed = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     age = models.IntegerField()
-    size = models.CharField(max_length = 1, choices = ANIMAL_SIZE_CHOICES, default = 'S')
-    gender = models.CharField(max_length = 1, choices = ANIMAL_GENDER_CHOICES, default = 'M')
+    size = models.CharField(max_length=1, choices=ANIMAL_SIZE_CHOICES, default='S')
+    gender = models.CharField(max_length=1, choices=ANIMAL_GENDER_CHOICES, default='M')
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
-    status = models.CharField(max_length = 1, choices = ANIMAL_STATUS_CHOICES, default = 'F')
+    status = models.CharField(max_length=1, choices=ANIMAL_STATUS_CHOICES, default='F')
+
+    @classmethod
+    def create_from_dict(cls, animal_dict):
+        return cls(
+            animal_type=animal_dict['animal_type'],
+            breed=animal_dict['breed'],
+            name=animal_dict['name'],
+            age=animal_dict['animal_age'],
+            size=animal_dict['size_of_animal'],
+            gender=animal_dict['sex_of_animal'],
+            status=animal_dict['animal_condition'],
+            owner=Owner.objects.get_or_create(name=animal_dict['human_owner'])[0],
+        )
 
     def __str__(self):
         return f"{self.name}"
