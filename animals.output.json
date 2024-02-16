@@ -1,0 +1,35 @@
+[
+    {
+        "age": 3,
+        "animal_type": "D",
+        "breed": "Beagle",
+        "gender": "M",
+        "name": "Max",
+        "owner": 43,
+        "registered_at": "2021-06-15 08:45:12",
+        "size": "M",
+        "status": "Adopted"
+    },
+    {
+        "age": 5,
+        "animal_type": "C",
+        "breed": "Persian",
+        "gender": "F",
+        "name": "Bella",
+        "owner": 44,
+        "registered_at": "2020-10-20 14:30:05",
+        "size": "S",
+        "status": "Available"
+    },
+    {
+        "age": 2,
+        "animal_type": "B",
+        "breed": "Parrot",
+        "gender": "M",
+        "name": "Coco",
+        "owner": 45,
+        "registered_at": "2022-01-05 09:22:47",
+        "size": "S",
+        "status": "Adopted"
+    }
+]

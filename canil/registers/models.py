@@ -128,9 +128,12 @@ class Owner(models.Model):
     def __str__(self):
         return self.name
     
-    def save(self):
-        self.fill_address_details()
-        super(Owner, self).save()
+    # def save(self):
+    #     self.fill_address_details()
+    #     super(Owner, self).save()
+        
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
 
 class Animal(models.Model):
@@ -142,7 +145,7 @@ class Animal(models.Model):
     gender = models.CharField(max_length=1, choices=ANIMAL_GENDER_CHOICES, default='M')
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
     status = models.CharField(max_length=1, choices=ANIMAL_STATUS_CHOICES, default='F')
-
+    
     @classmethod
     def create_from_dict(cls, animal_dict):
         return cls(

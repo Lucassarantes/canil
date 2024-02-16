@@ -1,3 +1,0 @@
-[2021-06-15 08:45:12] INFO: New Animal Registered - Animal_type: Dog, Breed: Beagle, Name: Max, Animal_age: 3 years, Size_of_animal: Medium, Sex_of_animal: Male, Human_Owner: Sarah Connor, Animal_condition: Adopted
-[2020-10-20 14:30:05] INFO: New Animal Registered - Animal_type: Cat, Breed: Persian, Name: Bella, Animal_age: 5 years, Size_of_animal: Small, Sex_of_animal: Female, Human_Owner: John Smith, Animal_condition: Available
-[2022-01-05 09:22:47] INFO: New Animal Registered - Animal_type: Bird, Breed: Parrot, Name: Coco, Animal_age: 2 years, Size_of_animal: Small, Sex_of_animal: Male, Human_Owner: Alice Johnson, Animal_condition: Adopted
